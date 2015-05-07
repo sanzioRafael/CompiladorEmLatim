@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1900.0" styleClass="background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.unirondon.controller.MainViewController">
+<children><MenuBar maxWidth="1.7976931348623157E308" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="37.0" prefWidth="1900.0" style="-fx-min-width: 100%;" xmlns:fx="http://javafx.com/fxml">
+  <menus>
+    <Menu mnemonicParsing="false" text="Arquivo">
+      <items><Menu mnemonicParsing="false" text="Novo">
+  <items>
+    <MenuItem fx:id="miNovoProjeto" mnemonicParsing="false" onAction="#onActionMiNovoProjeto" text="Novo Projeto" /><MenuItem fx:id="miNovoLoba" mnemonicParsing="false" onAction="#onActionMiNovoLoba" text="Novo Arquivo .loba" />
+  </items>
+</Menu><SeparatorMenuItem mnemonicParsing="false" /><MenuItem fx:id="miSair" mnemonicParsing="false" onAction="#onActionMiSair" text="Sair" />
+      </items>
+    </Menu>
+    <Menu mnemonicParsing="false" text="Editar" />
+    <Menu mnemonicParsing="false" text="Ajuda">
+      <items>
+        <MenuItem mnemonicParsing="false" text="Sobre" />
+      </items>
+    </Menu>
+  </menus>
+</MenuBar><TabPane layoutY="82.0" prefHeight="999.0" prefWidth="378.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml">
+  <tabs>
+    <Tab fx:id="tabProject" closable="false" text="Projetos" />
+  </tabs>
+</TabPane><TabPane layoutX="378.0" layoutY="788.0" prefHeight="211.0" prefWidth="1523.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml">
+  <tabs>
+    <Tab closable="false" text="Console">
+<content><TextArea fx:id="txtAreaConsole" editable="false" prefHeight="172.0" prefWidth="1518.0" />
+</content>
+    </Tab>
+    <Tab closable="false" text="Problemas">
+<content><TableView prefHeight="200.0" prefWidth="200.0" xmlns:fx="http://javafx.com/fxml">
+  <columns>
+    <TableColumn prefWidth="200.0" text="Descrição" />
+    <TableColumn prefWidth="200.0" text="Recurso" /><TableColumn prefWidth="200.0" text="Diretório" /><TableColumn prefWidth="200.0" text="Localização" /><TableColumn prefWidth="200.0" text="Tipo" />
+  </columns>
+</TableView>
+</content>
+    </Tab>
+  </tabs>
+</TabPane><TabPane fx:id="tabPaneEditorText" layoutX="378.0" layoutY="82.0" prefHeight="706.0" prefWidth="1523.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml" /><ToolBar layoutY="37.0" prefHeight="47.0" prefWidth="1900.0" xmlns:fx="http://javafx.com/fxml">
+  <items>
+    <Button fx:id="btnSaveLobaFile" mnemonicParsing="false" onAction="#btnSaveLobaFileOnAction" text="Button" /><Button fx:id="btnRunLoba" mnemonicParsing="false" onAction="#btnRunLobaOnAction" text="Button" /><Button mnemonicParsing="false" text="Button" /><Button mnemonicParsing="false" text="Button" /><Button mnemonicParsing="false" text="Button" /><Button mnemonicParsing="false" text="Button" />
+  </items>
+</ToolBar>
+</children></AnchorPane>

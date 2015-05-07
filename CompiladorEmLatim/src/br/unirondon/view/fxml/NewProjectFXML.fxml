@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="551.0" styleClass="background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.unirondon.controller.NewProjectController">
+<children><TextField fx:id="fieldNewProject" layoutX="33.0" layoutY="72.0" prefHeight="42.0" prefWidth="478.0" /><Label layoutX="33.0" layoutY="14.0" prefHeight="42.0" prefWidth="245.0" text="Nome do Projeto" /><Button fx:id="btnSalvarNewProject" layoutX="33.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnSalvarNewProjectOnAction" prefHeight="42.0" prefWidth="143.0" text="Salvar" />
+<Button fx:id="btnCancelarNewProject" layoutX="368.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnCancelarNewProjectOnAction" prefHeight="42.0" prefWidth="143.0" text="Cancelar" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+</children></AnchorPane>

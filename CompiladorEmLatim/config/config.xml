@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UsuarioConfig>
+    <Directories>
+        <directoryPath>C:\Users\Rafael\Documents\Project Compilador Loba</directoryPath>
+        <Projects>
+            <binares>
+                <binName>/bin</binName>
+            </binares>
+            <projectName>Loba</projectName>
+            <sources>
+                <srcName>/src</srcName>
+            </sources>
+        </Projects>
+        <isSelected>true</isSelected>
+    </Directories>
+    <Directories>
+        <directoryPath>C:\LobaCapi</directoryPath>
+        <Projects>
+            <binares>
+                <binName>/bin</binName>
+            </binares>
+            <projectName>bejcejr</projectName>
+            <sources>
+                <srcName>/src</srcName>
+            </sources>
+        </Projects>
+        <isSelected>false</isSelected>
+    </Directories>
+</UsuarioConfig>
