@@ -23,8 +23,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import br.unirondon.compiler.Compiler;
-import br.unirondon.compiler.Lexer;
 import br.unirondon.exception.BasicException;
+import br.unirondon.interfaces.CompileOnActions;
 import br.unirondon.values.AppConfig;
 import br.unirondon.view.MainView;
 import br.unirondon.view.NewProjectView;
@@ -34,7 +34,7 @@ import br.unirondon.view.xml.Project;
 import br.unirondon.view.xml.Source;
 import br.unirondon.view.xml.UsuarioConfig;
 
-public class MainViewController implements Initializable {
+public class MainViewController implements Initializable, CompileOnActions {
 
 	@FXML
 	private MenuItem miNovoProjeto, miNovoLoba, miSair;
@@ -207,8 +207,8 @@ public class MainViewController implements Initializable {
 	private void btnRunLobaOnAction(ActionEvent event) {
 		if (lobaSource != null) {
 			btnSaveLobaFile.fire();
-			
-			this.compiler = new Compiler(lobaSource);
+			this.compiler = new Compiler(lobaSource, this);
+			this.compiler.startCompilation();
 		}
 	}
 
@@ -279,6 +279,15 @@ public class MainViewController implements Initializable {
 		}
 
 		treeProjects.getChildren().add(projectNode);
+	}
+
+	@Override
+	public void writeConsole(String value) {
+		this.txtAreaConsole.clear();
+		
+		if (!value.isEmpty()) {
+			this.txtAreaConsole.setText(value);
+		}
 	}
 
 }

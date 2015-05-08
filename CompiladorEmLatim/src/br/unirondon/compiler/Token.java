@@ -6,15 +6,22 @@ public class Token {
 
 	private String value;
 	private TypeToken type;
+	private int row;
+	private int column;
 
 	public Token() {
 		this.value = "";
 		this.type = TypeToken.UNDEFINED;
+		this.row = 0;
+		this.column = 0;
 	}
 
-	public Token(String sourceCode, TypeToken type) {
-		this.value = sourceCode;
+	public Token(String value, TypeToken type, int row, int column) {
+		super();
+		this.value = value;
 		this.type = type;
+		this.row = row;
+		this.column = column;
 	}
 
 	public String getValue() {
@@ -33,9 +40,25 @@ public class Token {
 		this.type = type;
 	}
 
+	public int getRow() {
+		return row;
+	}
+
+	public void setRow(int row) {
+		this.row = row;
+	}
+
+	public int getColumn() {
+		return column;
+	}
+
+	public void setColumn(int column) {
+		this.column = column;
+	}
+
 	@Override
 	public String toString() {
-		return this.value + " - " + this.type;
+		return "[" + this.value + ", " + this.type + ", " + this.row + ", " + this.column + "]";
 	}
 
 }

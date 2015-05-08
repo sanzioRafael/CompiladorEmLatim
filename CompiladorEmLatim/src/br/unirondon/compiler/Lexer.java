@@ -28,77 +28,49 @@ public class Lexer {
 	private List<Token> symbolTable;
 
 	private String[] alphabeticUpper = new String[] {
-			AppConfig.getSymbolString("upperA"),
-			AppConfig.getSymbolString("upperB"),
-			AppConfig.getSymbolString("upperC"),
-			AppConfig.getSymbolString("upperD"),
-			AppConfig.getSymbolString("upperE"),
-			AppConfig.getSymbolString("upperF"),
-			AppConfig.getSymbolString("upperG"),
-			AppConfig.getSymbolString("upperH"),
-			AppConfig.getSymbolString("upperI"),
-			AppConfig.getSymbolString("upperJ"),
-			AppConfig.getSymbolString("upperK"),
-			AppConfig.getSymbolString("upperL"),
-			AppConfig.getSymbolString("upperM"),
-			AppConfig.getSymbolString("upperN"),
-			AppConfig.getSymbolString("upperO"),
-			AppConfig.getSymbolString("upperP"),
-			AppConfig.getSymbolString("upperQ"),
-			AppConfig.getSymbolString("upperR"),
-			AppConfig.getSymbolString("upperS"),
-			AppConfig.getSymbolString("upperT"),
-			AppConfig.getSymbolString("upperU"),
-			AppConfig.getSymbolString("upperV"),
-			AppConfig.getSymbolString("upperW"),
-			AppConfig.getSymbolString("upperX"),
-			AppConfig.getSymbolString("upperY"),
-			AppConfig.getSymbolString("upperZ") };
+			AppConfig.getSymbolString("upperA"), AppConfig.getSymbolString("upperB"), AppConfig.getSymbolString("upperC"),
+			AppConfig.getSymbolString("upperD"), AppConfig.getSymbolString("upperE"), AppConfig.getSymbolString("upperF"),
+			AppConfig.getSymbolString("upperG"), AppConfig.getSymbolString("upperH"), AppConfig.getSymbolString("upperI"),
+			AppConfig.getSymbolString("upperJ"), AppConfig.getSymbolString("upperK"), AppConfig.getSymbolString("upperL"),
+			AppConfig.getSymbolString("upperM"), AppConfig.getSymbolString("upperN"), AppConfig.getSymbolString("upperO"),
+			AppConfig.getSymbolString("upperP"), AppConfig.getSymbolString("upperQ"), AppConfig.getSymbolString("upperR"),
+			AppConfig.getSymbolString("upperS"), AppConfig.getSymbolString("upperT"), AppConfig.getSymbolString("upperU"),
+			AppConfig.getSymbolString("upperV"), AppConfig.getSymbolString("upperW"), AppConfig.getSymbolString("upperX"),
+			AppConfig.getSymbolString("upperY"), AppConfig.getSymbolString("upperZ")
+	};
 	private String[] alphabeticLower = new String[] {
-			AppConfig.getSymbolString("lowerA"), AppConfig.getSymbolString("lowerB"),
-			AppConfig.getSymbolString("lowerC"),
-			AppConfig.getSymbolString("lowerD"),
-			AppConfig.getSymbolString("lowerE"),
-			AppConfig.getSymbolString("lowerF"),
-			AppConfig.getSymbolString("lowerG"),
-			AppConfig.getSymbolString("lowerH"),
-			AppConfig.getSymbolString("lowerI"),
-			AppConfig.getSymbolString("lowerJ"),
-			AppConfig.getSymbolString("lowerK"),
-			AppConfig.getSymbolString("lowerL"),
-			AppConfig.getSymbolString("lowerM"),
-			AppConfig.getSymbolString("lowerN"),
-			AppConfig.getSymbolString("lowerO"),
-			AppConfig.getSymbolString("lowerP"),
-			AppConfig.getSymbolString("lowerQ"),
-			AppConfig.getSymbolString("lowerR"),
-			AppConfig.getSymbolString("lowerS"),
-			AppConfig.getSymbolString("lowerT"),
-			AppConfig.getSymbolString("lowerU"),
-			AppConfig.getSymbolString("lowerV"),
-			AppConfig.getSymbolString("lowerW"),
-			AppConfig.getSymbolString("lowerX"),
-			AppConfig.getSymbolString("lowerY"),
-			AppConfig.getSymbolString("lowerZ") };
+			AppConfig.getSymbolString("lowerA"), AppConfig.getSymbolString("lowerB"), AppConfig.getSymbolString("lowerC"),
+			AppConfig.getSymbolString("lowerD"), AppConfig.getSymbolString("lowerE"), AppConfig.getSymbolString("lowerF"),
+			AppConfig.getSymbolString("lowerG"), AppConfig.getSymbolString("lowerH"), AppConfig.getSymbolString("lowerI"),
+			AppConfig.getSymbolString("lowerJ"), AppConfig.getSymbolString("lowerK"), AppConfig.getSymbolString("lowerL"),
+			AppConfig.getSymbolString("lowerM"), AppConfig.getSymbolString("lowerN"), AppConfig.getSymbolString("lowerO"),
+			AppConfig.getSymbolString("lowerP"), AppConfig.getSymbolString("lowerQ"), AppConfig.getSymbolString("lowerR"),
+			AppConfig.getSymbolString("lowerS"), AppConfig.getSymbolString("lowerT"), AppConfig.getSymbolString("lowerU"),
+			AppConfig.getSymbolString("lowerV"), AppConfig.getSymbolString("lowerW"), AppConfig.getSymbolString("lowerX"),
+			AppConfig.getSymbolString("lowerY"), AppConfig.getSymbolString("lowerZ")
+	};
 	private String[] nums = new String[] {
 			AppConfig.getSymbolString("one"), AppConfig.getSymbolString("two"), AppConfig.getSymbolString("three"),
 			AppConfig.getSymbolString("fuor"), AppConfig.getSymbolString("five"), AppConfig.getSymbolString("six"),
 			AppConfig.getSymbolString("seven"), AppConfig.getSymbolString("eight"), AppConfig.getSymbolString("nine"),
 			AppConfig.getSymbolString("zero")
-			};
+	};
 	private String[] ops = new String[] {
 			AppConfig.getSymbolString("addition"), AppConfig.getSymbolString("subtraction"), AppConfig.getSymbolString("multiplication"),
 			AppConfig.getSymbolString("division"), AppConfig.getSymbolString("bigger"), AppConfig.getSymbolString("less"),
 			AppConfig.getSymbolString("biggerEquals"), AppConfig.getSymbolString("attribution"), AppConfig.getSymbolString("lessEquals"),
 			AppConfig.getSymbolString("equals"), AppConfig.getSymbolString("different"), AppConfig.getSymbolString("booleanAnd"),
-			AppConfig.getSymbolString("booleanOr"), AppConfig.getSymbolString("simpleAsphas"), AppConfig.getSymbolString("doubleAsphas")
-			};
+			AppConfig.getSymbolString("booleanOr"), AppConfig.getSymbolString("parenthesesOpen"), AppConfig.getSymbolString("parenthesesClose"),
+			AppConfig.getSymbolString("simpleAsphas"), AppConfig.getSymbolString("doubleAsphas")
+	};
 	private String[] als = new String[] {
 			AppConfig.getSymbolString("addition"), AppConfig.getSymbolString("subtraction"), AppConfig.getSymbolString("multiplication"),
 			AppConfig.getSymbolString("division"), AppConfig.getSymbolString("bigger"), AppConfig.getSymbolString("less"),
 			AppConfig.getSymbolString("attribution"), AppConfig.getSymbolString("logicNot"), AppConfig.getSymbolString("logicAnd"),
-			AppConfig.getSymbolString("logicOr"), AppConfig.getSymbolString("semicolon"), AppConfig.getSymbolString("dot")
-			};
+			AppConfig.getSymbolString("logicOr"), AppConfig.getSymbolString("semicolon"), AppConfig.getSymbolString("dot"),
+			AppConfig.getSymbolString("parenthesesOpen"), AppConfig.getSymbolString("parenthesesClose"), AppConfig.getSymbolString("simpleAsphas"),
+			AppConfig.getSymbolString("doubleAsphas")
+	};
 	private String[] keyWords = new String[] {
 			AppConfig.getSymbolString("program"), AppConfig.getSymbolString("begin"), AppConfig.getSymbolString("end"),
 			AppConfig.getSymbolString("var"), AppConfig.getSymbolString("int"), AppConfig.getSymbolString("float"),
@@ -106,7 +78,7 @@ public class Lexer {
 			AppConfig.getSymbolString("if"), AppConfig.getSymbolString("else"), AppConfig.getSymbolString("for"),
 			AppConfig.getSymbolString("while"), AppConfig.getSymbolString("to"), AppConfig.getSymbolString("do"),
 			AppConfig.getSymbolString("then"), AppConfig.getSymbolString("write"), AppConfig.getSymbolString("read")
-			};
+	};
 
 	public Lexer(File source) {
 		try {
@@ -144,7 +116,8 @@ public class Lexer {
 		try {
 			this.sourceCode = "";
 			String charC, line;
-			Token token = new Token();
+			Token token;
+			int row = 1, column = 0;
 
 			charC = "";
 			line = null;
@@ -160,17 +133,23 @@ public class Lexer {
 			this.symbolTable = new ArrayList<Token>();
 
 			while (!charC.equals(AppConfig.getSymbolString("outOf"))) {
+				token = new Token();
 				charC = c.next();
 
-				while (charC == " ")
+				while (charC == " ") {
 					charC = c.next();
+					column++;
+				}
 
-				if (this.lyrics.contains(new Alphabetic(charC.toLowerCase(),
-						charC.toUpperCase()))) {
+				if (this.lyrics.contains(new Alphabetic(charC.toLowerCase(), charC.toUpperCase()))) {
 					while (this.lyrics.contains(new Alphabetic(charC.toLowerCase(), charC.toUpperCase())) || this.numbers.contains(charC)) {
 						token.setValue(token.getValue() + charC);
 						charC = c.next();
+						column++;
+						token.setColumn(column);
 					}
+					
+					token.setRow(row);
 
 					if (this.words.contains(token.getValue().toUpperCase())) {
 						token.setType(TypeToken.KEYWORDS);
@@ -188,8 +167,11 @@ public class Lexer {
 					while (this.numbers.contains(charC)) {
 						token.setValue(token.getValue() + charC);
 						charC = c.next();
+						column++;
+						token.setColumn(column);
 					}
-
+					
+					token.setRow(row);
 					token.setType(TypeToken.CONSTANT);
 
 					this.symbolTable.add(token);
@@ -201,35 +183,44 @@ public class Lexer {
 				if (this.aliens.contains(charC)) {
 					while (this.aliens.contains(charC)) {
 						token.setValue(token.getValue() + charC);
+						token.setColumn(column);
+						
+						column++;
+						token.setRow(row);
+						
 						charC = c.next();
-					}
+						
+						if (operators.contains(token.getValue())) {
+							token.setType(TypeToken.OPERATORS);
+						} else {
+							token.setType(TypeToken.ALIENS);
+						}
 
-					if (operators.contains(token.getValue())) {
-						token.setType(TypeToken.OPERATORS);
-					} else {
-						token.setType(TypeToken.CHARACTER);
-					}
+						this.symbolTable.add(token);
+						buildinSymbolTable(token);
 
-					this.symbolTable.add(token);
+						token = new Token();
+					}
+				}
+
+				if (charC.equals("\n")) {
+					column = 0;
+					token = new Token(charC, TypeToken.SPECIAL, row, column);
+
+					buildinSymbolTable(token);
+
+					token = new Token();
+					row++;
+				} else if (charC.equals("\t")) {
+					column++;
+					token = new Token(charC, TypeToken.SPECIAL, row, column);
+
 					buildinSymbolTable(token);
 
 					token = new Token();
 				}
-
-				if (charC.equals("\n") || charC.equals("\t")) {
-					token = new Token(charC, TypeToken.SPECIAL);
-					buildinSymbolTable(token);
-					token = new Token();
-				}
 			}
-
-			System.out.println("::Tabela de Simbolos::");
-
-			for (int i = 0; i < symbolTable.size(); i++) {
-				System.out.println("Índice: " + i + ": " + symbolTable.get(i).getValue());
-			}
-
-			System.out.println("::Programa::\n" + out);
+			
 		} catch (IOException e) {
 			new BasicException(e.getMessage(), e).showExceptioDialog(
 					AppConfig.getPropertie("Dialogs.titleException"),
@@ -242,8 +233,7 @@ public class Lexer {
 	private void buildHash() {
 		this.lyrics = new HashSet<Alphabetic>();
 		for (int i = 0; i < alphabeticLower.length; i++) {
-			this.lyrics.add(new Alphabetic(alphabeticLower[i],
-					alphabeticUpper[i]));
+			this.lyrics.add(new Alphabetic(alphabeticLower[i], alphabeticUpper[i]));
 		}
 
 		this.numbers = new HashSet<>();
@@ -274,11 +264,9 @@ public class Lexer {
 			index = this.symbolTable.indexOf(token);
 
 			if (index != -1) {
-				this.out += "[" + token.getType().getDesc() + ", " + index
-						+ "] ";
+				this.out += "[" + token.getType().getDesc() + ", " + index + "]";
 			} else {
-				this.out += "[" + token.getType().getDesc() + ", "
-						+ this.symbolTable.size() + "]";
+				this.out += "[" + token.getType().getDesc() + ", " + this.symbolTable.size() + "]";
 			}
 
 		} else {
@@ -286,8 +274,7 @@ public class Lexer {
 				index = this.symbolTable.indexOf(token);
 
 				if (index != -1) {
-					this.out += "[" + token.getType().getDesc() + ", " + index
-							+ "] ";
+					this.out += "[" + token.getType().getDesc() + ", " + index + "]";
 				} else {
 					this.out += "[" + token.getType().getDesc() + ", " + this.symbolTable.size() + "]";
 				}

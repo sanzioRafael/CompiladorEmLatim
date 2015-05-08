@@ -45,4 +45,20 @@ public class Chareiador {
 
 		return returnChar;
 	}
+
+	public String before() {
+		String returnChar;
+		try {
+			if (currentChar != sourceCode.length()) {
+				returnChar = sourceCode.substring(currentChar, currentChar--) == null ?
+						sourceCode.substring(currentChar, currentChar++) : sourceCode.substring(currentChar, currentChar--);					
+			} else {
+				returnChar = sourceCode.substring(currentChar, currentChar++);
+			}
+		} catch (Exception e) {
+			returnChar = AppConfig.getSymbolString("outOf");
+		}
+
+		return returnChar;
+	}
 }

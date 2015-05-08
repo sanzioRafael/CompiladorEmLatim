@@ -98,10 +98,17 @@
 	-fx-font-family: "Lucida Sans";
 }
 
-.text-field {
+.text-field, .tab {
 	-fx-font-size: 16pt;
 	-fx-font-style: italic;
 	-fx-font-family: "Lucida Sans";
+}
+
+.text-area {
+	-fx-font-size: 16pt;
+	-fx-font-style: italic oblique;
+	-fx-font-family: "Lucida Sans";
+	-fx-text-align: justify;
 }
 
 /* 

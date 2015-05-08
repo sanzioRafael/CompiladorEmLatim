@@ -5,7 +5,6 @@ public class Syntax {
 	private Lexer lexer;
 
 	public Syntax(Lexer lexer) {
-		super();
 		this.lexer = lexer;
 	}
 
