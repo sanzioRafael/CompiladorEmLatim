@@ -17,7 +17,6 @@ public class Token {
 	}
 
 	public Token(String value, TypeToken type, int row, int column) {
-		super();
 		this.value = value;
 		this.type = type;
 		this.row = row;
@@ -58,7 +57,8 @@ public class Token {
 
 	@Override
 	public String toString() {
-		return "[" + this.value + ", " + this.type + ", " + this.row + ", " + this.column + "]";
+		return "[" + (this.value == null ? " ": this.value) + ", "
+				+ this.type.getDesc() + ", " + this.row + ", " + this.column + "]";
 	}
 
 }

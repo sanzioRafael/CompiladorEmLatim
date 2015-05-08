@@ -49,14 +49,21 @@ public class Chareiador {
 	public String before() {
 		String returnChar;
 		try {
-			if (currentChar != sourceCode.length()) {
-				returnChar = sourceCode.substring(currentChar, currentChar--) == null ?
-						sourceCode.substring(currentChar, currentChar++) : sourceCode.substring(currentChar, currentChar--);					
+			if (currentChar != -1) {
+				if (sourceCode.substring(currentChar, currentChar - 1) == null) {
+					returnChar = sourceCode.substring(currentChar, currentChar + 1);
+					currentChar++;
+				} else {
+					returnChar = sourceCode.substring(currentChar, currentChar - 1);
+					currentChar--;
+				}
 			} else {
-				returnChar = sourceCode.substring(currentChar, currentChar++);
+				returnChar = sourceCode.substring(currentChar, currentChar + 1);
+				currentChar++;
 			}
 		} catch (Exception e) {
-			returnChar = AppConfig.getSymbolString("outOf");
+			returnChar = sourceCode.substring(currentChar, currentChar + 1);
+			currentChar++;
 		}
 
 		return returnChar;

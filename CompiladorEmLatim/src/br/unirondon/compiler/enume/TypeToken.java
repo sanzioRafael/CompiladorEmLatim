@@ -11,6 +11,7 @@ public enum TypeToken {
 	ALIENS(AppConfig.getPropertie("App.mainCompilerAliens")),
 	KEYWORDS(AppConfig.getPropertie("App.mainCompilerKeyWords")),
 	SPECIAL(AppConfig.getPropertie("App.mainCompilerSpecial")),
+	SPACE(AppConfig.getPropertie("App.mainCompilerSpace")),
 	UNDEFINED(AppConfig.getPropertie("App.mainCompilerUndefined"));
 
 	private String desc;

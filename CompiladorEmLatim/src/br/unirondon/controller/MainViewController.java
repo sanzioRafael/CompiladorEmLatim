@@ -283,10 +283,10 @@ public class MainViewController implements Initializable, CompileOnActions {
 
 	@Override
 	public void writeConsole(String value) {
-		this.txtAreaConsole.clear();
-		
-		if (!value.isEmpty()) {
-			this.txtAreaConsole.setText(value);
+		if (value.isEmpty()) {
+			this.txtAreaConsole.setText(value + "\n");
+		} else {
+			this.txtAreaConsole.appendText(value + "\n");
 		}
 	}
 

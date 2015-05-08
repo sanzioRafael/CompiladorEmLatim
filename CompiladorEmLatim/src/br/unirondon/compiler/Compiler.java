@@ -2,17 +2,20 @@ package br.unirondon.compiler;
 
 import java.io.File;
 
+import br.unirondon.exception.BasicException;
 import br.unirondon.interfaces.CompileOnActions;
 
 public class Compiler {
 
 	private File sourceCode;
 	private Lexer lexer;
+	private Syntax syntax;
 	private CompileOnActions compileOnActions;
 
 	public Compiler(File sourceCode, CompileOnActions compileOnActions) {
 		this.sourceCode = sourceCode;
 		this.lexer = new Lexer(sourceCode);
+		this.syntax = new Syntax(lexer);
 		this.compileOnActions = compileOnActions;
 	}
 
@@ -44,11 +47,12 @@ public class Compiler {
 		this.lexer.startLexer();
 		
 		if (!this.lexer.getOut().isEmpty()) {
-			compileOnActions.writeConsole(this.lexer.getOut());
-		}
-		
-		for (Token t : this.lexer.getSymbolTable()) {
-			System.out.println(t.toString());
+			this.compileOnActions.writeConsole(this.lexer.getOut());
+			try {
+				this.syntax.checkProgramNameDeclaration();
+			} catch (BasicException e) {
+				this.compileOnActions.writeConsole(e.getMessage());
+			}
 		}
 	}
 
