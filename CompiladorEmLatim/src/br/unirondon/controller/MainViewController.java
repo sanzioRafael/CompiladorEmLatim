@@ -147,6 +147,7 @@ public class MainViewController implements Initializable, CompileOnActions {
 	@FXML
 	private void onActionMiNovoProjeto(ActionEvent event) throws Exception {
 		List<Project> projects = new ArrayList<Project>();
+
 		for (int i = 0; i < config.getDirectories().size(); i++) {
 			if (config.getDirectories().get(i).isSelected()) {
 				if (config.getDirectories().get(i).getProjects() == null) {
@@ -218,20 +219,26 @@ public class MainViewController implements Initializable, CompileOnActions {
 		for (int i = 0; i < config.getDirectories().size(); i++) {
 			if (config.getDirectories().get(i).isSelected()) {
 				if (config.getDirectories().get(i).getProjects().get(0) != null) {
+					
 					config.getDirectories().get(i).getProjects().get(0).getSrcs().add(newLoba);
+					
 					lobaSource = new File(config.getDirectories().get(i).getDirectoryPath()
-							+ AppConfig.getSymbolString("division") + config.getDirectories().get(i).getProjects().get(0).getName()
-							+ config.getDirectories().get(i).getProjects().get(0).getSrcs().get(0).getSrcName() + newLoba.getSrcName());
+						+ AppConfig.getSymbolString("division") +config.getDirectories().get(i).getProjects().get(0).getName()
+						+ config.getDirectories().get(i).getProjects().get(0).getSrcs().get(0).getSrcName()
+						+ newLoba.getSrcName());
+					
 					lobaSource.createNewFile();
 				}
 			}
 		}
 
 		TextArea txtArea = new TextArea();
-		Tab newTab = new Tab(newLoba.getSrcName().replace(AppConfig.getSymbolString("division"), "").replace(".txt", ".loba"), txtArea);
+		Tab newTab = new Tab(newLoba.getSrcName().replace(AppConfig.getSymbolString("division"), "")
+				.replace(".txt", ".loba"), txtArea);
 
 		editorFields.add(txtArea);
 		tabPaneEditorText.getTabs().add(newTab);
+		
 		buildingTreeProjects();
 	}
 
@@ -260,21 +267,20 @@ public class MainViewController implements Initializable, CompileOnActions {
 				if (j == 0) {
 					if (projects.get(i).getSrcs().size() <= 1) {
 						srcNode = new TreeItem<String>(projects.get(i).getSrcs().get(j).getSrcName().
-								replaceAll(AppConfig.getSymbolString("division"), ""), emptyFolderIcon);
+							replaceAll(AppConfig.getSymbolString("division"), ""), emptyFolderIcon);
 					} else {
 						srcNode = new TreeItem<String>(projects.get(i).getSrcs().get(j).getSrcName()
-								.replaceAll(AppConfig.getSymbolString("division"), ""), folderIcon);
+							.replaceAll(AppConfig.getSymbolString("division"), ""), folderIcon);
 					}
 				} else {
 					codeNode = new TreeItem<String>(projects.get(i).getSrcs().get(j).getSrcName()
-							.replaceAll(AppConfig.getSymbolString("division"), "").replace(".txt", ".loba"), sourceIcon);
+						.replaceAll(AppConfig.getSymbolString("division"), "").replace(".txt", ".loba"), sourceIcon);
 					srcNode.getChildren().add(codeNode);
 				}
 			}
 
 			projectNode.setExpanded(true);
 			srcNode.setExpanded(true);
-
 			projectNode.getChildren().add(srcNode);
 		}
 
