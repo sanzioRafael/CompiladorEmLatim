@@ -58,7 +58,7 @@ public class Token {
 	@Override
 	public String toString() {
 		return "[" + (this.value == null ? " ": this.value) + ", "
-				+ this.type.getDesc() + ", " + this.row + ", " + this.column + "]";
+				+ this.type.getDesc() + ", " + this.row + ", " + this.column + "]\n";
 	}
 
 }

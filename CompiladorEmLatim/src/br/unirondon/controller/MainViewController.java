@@ -290,4 +290,8 @@ public class MainViewController implements Initializable, CompileOnActions {
 		}
 	}
 
+	@Override
+	public void clearConsole() {
+		this.txtAreaConsole.clear();
+	}
 }

@@ -25,8 +25,7 @@ public class BasicException extends Exception {
 		super(msg, e);
 	}
 
-	public void showExceptioDialog(String title, String header, String content,
-			String was, Exception e) {
+	public void showExceptioDialog(String title, String header, String content, String was, Exception e) {
 		Alert alert = new Alert(AlertType.ERROR);
 		alert.setTitle(title);
 		alert.setHeaderText(header);
