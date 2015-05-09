@@ -295,12 +295,17 @@ public class MainViewController implements Initializable, CompileOnActions {
 			case BLACK: {
 				this.txtAreaConsole.getStyleClass().remove(Color.RED.getDesc());
 				this.txtAreaConsole.getStyleClass().add(c.getDesc());
+				break;
 			}
 			
 			case RED: {
 				this.txtAreaConsole.getStyleClass().remove(Color.BLACK.getDesc());
 				this.txtAreaConsole.getStyleClass().add(c.getDesc());
+				break;
 			}
+			
+			default:
+				break;
 		}
 		
 		if (value.isEmpty()) {

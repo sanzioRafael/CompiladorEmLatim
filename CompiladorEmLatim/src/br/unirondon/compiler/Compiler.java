@@ -49,25 +49,28 @@ public class Compiler {
 
 	public void startCompilation() {
 		this.lexer.startLexer();
-		String erroSyntax = AppConfig.getPropertie("App.mainCompilerSyntax");
+		String erroSyntax;
 		String erroSemantics = AppConfig.getPropertie("App.mainCompilerSemantics");
 		
 		this.compileOnActions.clearConsole();
 		
-		if (!this.lexer.getOut().isEmpty()) {
+		System.out.println(this.sourceCode.length());
+		
+		if (this.sourceCode.length() > 0) {
 			this.compileOnActions.writeConsole(AppConfig.getPropertie("App.mainCompilerLexer"), Color.BLACK);
 			this.compileOnActions.writeConsole(this.lexer.getOut(), Color.BLACK);
 			
 			try {
-				erroSyntax += this.syntax.startSyntaxAnalizator();
+				erroSyntax = this.syntax.startSyntaxAnalizator().isEmpty() ? "" :
+					AppConfig.getPropertie("App.mainCompilerSyntax") + this.syntax.startSyntaxAnalizator();
 				
 				if (!erroSyntax.isEmpty()) {
 					throw new BasicException(erroSyntax);
+				} else {
+					this.compileOnActions.writeConsole(AppConfig.getPropertie("App.mainCompilerSyntax")
+							+ "\n" + AppConfig.getPropertie("App.mainCompilerSyntaxNoError"), Color.BLACK);
 				}
 				
-				if (!erroSemantics.isEmpty()) {
-					throw new BasicException(erroSemantics);
-				}
 			} catch (BasicException e) {
 				this.compileOnActions.writeConsole(e.getMessage(), Color.RED);
 			}

@@ -23,9 +23,8 @@ public class Syntax {
 	}
 
 	public String startSyntaxAnalizator() {
-		String erro = "";
-		
-		erro = checkProgramNameDeclaration() + checkProgramVar();
+		String erro = !(checkProgramNameDeclaration() + checkProgramVar()).isEmpty()?
+				"\n" + (checkProgramNameDeclaration() + checkProgramVar()): "";
 		
 		return erro;
 	}
@@ -74,6 +73,7 @@ public class Syntax {
 		} catch (Exception e) {
 			System.out.println(AppConfig.getPropertie("App.mainCompilerIndexOutBoundException") + e.getMessage());
 		}
+		
 		
 		return erro;
 	}
