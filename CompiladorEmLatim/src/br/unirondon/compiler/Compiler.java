@@ -4,6 +4,7 @@ import java.io.File;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import br.unirondon.compiler.enume.Color;
 import br.unirondon.exception.BasicException;
 import br.unirondon.interfaces.CompileOnActions;
 import br.unirondon.values.AppConfig;
@@ -54,8 +55,8 @@ public class Compiler {
 		this.compileOnActions.clearConsole();
 		
 		if (!this.lexer.getOut().isEmpty()) {
-			this.compileOnActions.writeConsole(AppConfig.getPropertie("App.mainCompilerLexer"));
-			this.compileOnActions.writeConsole(this.lexer.getOut());
+			this.compileOnActions.writeConsole(AppConfig.getPropertie("App.mainCompilerLexer"), Color.BLACK);
+			this.compileOnActions.writeConsole(this.lexer.getOut(), Color.BLACK);
 			
 			try {
 				erroSyntax += this.syntax.startSyntaxAnalizator();
@@ -68,7 +69,7 @@ public class Compiler {
 					throw new BasicException(erroSemantics);
 				}
 			} catch (BasicException e) {
-				this.compileOnActions.writeConsole(e.getMessage());
+				this.compileOnActions.writeConsole(e.getMessage(), Color.RED);
 			}
 		} else {
 			Alert alert = new Alert(AlertType.INFORMATION);

@@ -23,6 +23,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import br.unirondon.compiler.Compiler;
+import br.unirondon.compiler.enume.Color;
 import br.unirondon.exception.BasicException;
 import br.unirondon.interfaces.CompileOnActions;
 import br.unirondon.values.AppConfig;
@@ -90,6 +91,7 @@ public class MainViewController implements Initializable, CompileOnActions {
 		runLoba = new ImageView(new Image(AppConfig.getPropertie("App.mainRunLobaIcon")));
 		treeProjects = new TreeItem<String>(AppConfig.getPropertie("App.mainProjects"), projecstIcon);
 		treeView = new TreeView<String>(treeProjects);
+		this.txtAreaConsole.getStyleClass().add("black");
 
 		tabProject.setContent(treeView);
 
@@ -288,7 +290,19 @@ public class MainViewController implements Initializable, CompileOnActions {
 	}
 
 	@Override
-	public void writeConsole(String value) {
+	public void writeConsole(String value, Color c) {
+		switch (c) {
+			case BLACK: {
+				this.txtAreaConsole.getStyleClass().remove(Color.RED.getDesc());
+				this.txtAreaConsole.getStyleClass().add(c.getDesc());
+			}
+			
+			case RED: {
+				this.txtAreaConsole.getStyleClass().remove(Color.BLACK.getDesc());
+				this.txtAreaConsole.getStyleClass().add(c.getDesc());
+			}
+		}
+		
 		if (value.isEmpty()) {
 			this.txtAreaConsole.setText(value + "\n");
 		} else {

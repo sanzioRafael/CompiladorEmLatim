@@ -1,16 +1,17 @@
 package br.unirondon.compiler;
 
+import java.util.regex.Pattern;
+
 import br.unirondon.compiler.enume.TypeToken;
 import br.unirondon.values.AppConfig;
 
 public class Syntax {
 
 	private Lexer lexer;
-	private boolean varOk;
+	private Pattern pattern;
 
 	public Syntax(Lexer lexer) {
 		this.lexer = lexer;
-		this.varOk = true;
 	}
 
 	public Lexer getLexer() {
@@ -91,13 +92,11 @@ public class Syntax {
 					}
 					
 					if (this.lexer.getSymbolTable().get(i).getRow() == row) {
-						this.varOk = false;
 						erro += AppConfig.getPropertie("App.mainCompilerVarBeforeProgramException")
 								+ this.lexer.getSymbolTable().get(i).toString();
 					}
 					
 					if (cont > 1) {
-						this.varOk = false;
 						erro += AppConfig.getPropertie("App.mainCompilerVarsException")
 								+ this.lexer.getSymbolTable().get(i).toString();
 					}
@@ -105,11 +104,9 @@ public class Syntax {
 			}
 			
 			if (cont < 1) {
-				this.varOk = false;
 				erro = AppConfig.getPropertie("App.mainCompilerNoVarException");
 			}
 		} catch (Exception e) {
-			this.varOk = false;
 			System.out.println(AppConfig.getPropertie("App.mainCompilerIndexOutBoundException") + e.getMessage());
 		}
 		
@@ -119,18 +116,6 @@ public class Syntax {
 	private String checkVars () {
 		String erro = "";
 		int i = 0;
-		
-		try {
-			if (varOk) {
-				while (i == -1) {
-					
-				}
-			} else {
-				erro = AppConfig.getPropertie("App.mainCompilerIndexOutBoundException");
-			}
-		} catch (Exception e) {
-			System.out.println(AppConfig.getPropertie("App.mainCompilerIndexOutBoundException") + e.getMessage());
-		}
 		
 		return erro;
 	}

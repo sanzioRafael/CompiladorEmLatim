@@ -96,7 +96,7 @@
 	-fx-font-family: "Lucida Sans";
 }
 
-.text-field, .tab {
+.text-field,.tab {
 	-fx-font-size: 16pt;
 	-fx-font-style: italic;
 	-fx-font-family: "Lucida Sans";
@@ -109,11 +109,26 @@
 	-fx-text-align: justify;
 }
 
-/* 
- * Metro style Push Button
- * Author: Pedro Duque Vieira
- * http://pixelduke.wordpress.com/2012/10/23/jmetro-windows-8-controls-on-java/
- */
+.black {
+	-fx-text-fill: #696969;
+}
+
+.purple {
+	-fx-text-fill: #D8BFD8;
+}
+
+.blue {
+	-fx-text-fill: #00CED1;
+}
+
+.green {
+	-fx-text-fill: #90EE90;
+}
+
+.red {
+	-fx-text-fill: #FF0000;
+}
+
 .button {
 	-fx-padding: 5 22 5 22;
 	-fx-border-color: #e2e2e2;
