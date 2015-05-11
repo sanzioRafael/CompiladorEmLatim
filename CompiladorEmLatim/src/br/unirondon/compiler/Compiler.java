@@ -49,14 +49,12 @@ public class Compiler {
 
 	public void startCompilation() {
 		this.lexer.startLexer();
-		String erroSyntax;
-		String erroSemantics = AppConfig.getPropertie("App.mainCompilerSemantics");
-		
 		this.compileOnActions.clearConsole();
+		String erroSyntax;
+		String erroSemantics;
 		
-		System.out.println(this.sourceCode.length());
 		
-		if (this.sourceCode.length() > 0) {
+		if (this.sourceCode.length() > 2) {
 			this.compileOnActions.writeConsole(AppConfig.getPropertie("App.mainCompilerLexer"), ColorEnum.BLACK);
 			this.compileOnActions.writeConsole(this.lexer.getOut(), ColorEnum.BLACK);
 			
