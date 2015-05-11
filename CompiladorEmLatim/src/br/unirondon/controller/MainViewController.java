@@ -210,7 +210,6 @@ public class MainViewController implements Initializable, CompileOnActions {
 	private void btnRunLobaOnAction(ActionEvent event) {
 		if (lobaSource != null) {
 			btnSaveLobaFile.fire();
-			
 			this.compiler = new Compiler(lobaSource, this);
 			this.compiler.startCompilation();
 		}
