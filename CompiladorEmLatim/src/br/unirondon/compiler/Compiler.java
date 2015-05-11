@@ -4,7 +4,7 @@ import java.io.File;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import br.unirondon.compiler.enume.Color;
+import br.unirondon.compiler.enume.ColorEnum;
 import br.unirondon.exception.BasicException;
 import br.unirondon.interfaces.CompileOnActions;
 import br.unirondon.values.AppConfig;
@@ -57,8 +57,8 @@ public class Compiler {
 		System.out.println(this.sourceCode.length());
 		
 		if (this.sourceCode.length() > 0) {
-			this.compileOnActions.writeConsole(AppConfig.getPropertie("App.mainCompilerLexer"), Color.BLACK);
-			this.compileOnActions.writeConsole(this.lexer.getOut(), Color.BLACK);
+			this.compileOnActions.writeConsole(AppConfig.getPropertie("App.mainCompilerLexer"), ColorEnum.BLACK);
+			this.compileOnActions.writeConsole(this.lexer.getOut(), ColorEnum.BLACK);
 			
 			try {
 				erroSyntax = this.syntax.startSyntaxAnalizator().isEmpty() ? "" :
@@ -68,11 +68,11 @@ public class Compiler {
 					throw new BasicException(erroSyntax);
 				} else {
 					this.compileOnActions.writeConsole(AppConfig.getPropertie("App.mainCompilerSyntax")
-							+ "\n" + AppConfig.getPropertie("App.mainCompilerSyntaxNoError"), Color.BLACK);
+							+ "\n" + AppConfig.getPropertie("App.mainCompilerSyntaxNoError"), ColorEnum.BLACK);
 				}
 				
 			} catch (BasicException e) {
-				this.compileOnActions.writeConsole(e.getMessage(), Color.RED);
+				this.compileOnActions.writeConsole(e.getMessage(), ColorEnum.RED);
 			}
 		} else {
 			Alert alert = new Alert(AlertType.INFORMATION);

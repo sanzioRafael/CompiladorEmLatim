@@ -2,7 +2,7 @@ package br.unirondon.compiler.enume;
 
 import br.unirondon.values.AppConfig;
 
-public enum Color {
+public enum ColorEnum {
 
 	BLACK(AppConfig.getPropertie("App.mainTxtBlack")),
 	PURPLE(AppConfig.getPropertie("App.mainTxtPurple")),
@@ -12,7 +12,7 @@ public enum Color {
 
 	private String desc;
 
-	private Color (String desc) {
+	private ColorEnum (String desc) {
 		this.desc = desc;
 	}
 

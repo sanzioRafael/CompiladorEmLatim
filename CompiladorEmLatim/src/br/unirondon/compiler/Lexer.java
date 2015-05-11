@@ -82,6 +82,10 @@ public class Lexer {
 			AppConfig.getSymbolString("then"), AppConfig.getSymbolString("write"), AppConfig.getSymbolString("read")
 	};
 
+	public Lexer() {
+		buildHash();
+	}
+	
 	public Lexer(File source) {
 		try {
 			this.fileReader = new FileReader(source);

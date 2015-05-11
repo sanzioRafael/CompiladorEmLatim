@@ -35,7 +35,6 @@ public class SelectPathView extends Application {
 			stage.setScene(scene);
 			stage.getIcons().add(new Image(AppConfig.getPropertie("App.mainIcon")));
 			stage.initStyle(StageStyle.UNDECORATED);
-			scene.getStylesheets().add(getClass().getResource(AppConfig.getPropertie("App.stylesheet")).toExternalForm());
 
 			stage.show();
 			stage.centerOnScreen();

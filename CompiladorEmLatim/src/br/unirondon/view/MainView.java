@@ -34,8 +34,6 @@ public class MainView extends Application {
 			getStage().setWidth(1000);
 			getStage().setHeight(800);
 			getStage().getIcons().add(new Image(AppConfig.getPropertie("App.mainIcon")));
-			
-			this.scene.getStylesheets().add(getClass().getResource(AppConfig.getPropertie("App.stylesheet")).toExternalForm());
 		} catch (IOException e) {
 			new BasicException(e.getMessage(), e).showExceptioDialog(
 					AppConfig.getPropertie("Dialogs.titleException"),

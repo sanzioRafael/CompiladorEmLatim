@@ -38,7 +38,6 @@ public class NewProjectView extends Application {
 			stage.getIcons().add(new Image(AppConfig.getPropertie("App.mainIcon")));
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.initStyle(StageStyle.UNIFIED);
-			scene.getStylesheets().add(getClass().getResource(AppConfig.getPropertie("App.stylesheet")).toExternalForm());
 
 			stage.show();
 			stage.centerOnScreen();

@@ -23,7 +23,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import br.unirondon.compiler.Compiler;
-import br.unirondon.compiler.enume.Color;
+import br.unirondon.compiler.enume.ColorEnum;
 import br.unirondon.exception.BasicException;
 import br.unirondon.interfaces.CompileOnActions;
 import br.unirondon.values.AppConfig;
@@ -290,16 +290,16 @@ public class MainViewController implements Initializable, CompileOnActions {
 	}
 
 	@Override
-	public void writeConsole(String value, Color c) {
+	public void writeConsole(String value, ColorEnum c) {
 		switch (c) {
 			case BLACK: {
-				this.txtAreaConsole.getStyleClass().remove(Color.RED.getDesc());
+				this.txtAreaConsole.getStyleClass().remove(ColorEnum.RED.getDesc());
 				this.txtAreaConsole.getStyleClass().add(c.getDesc());
 				break;
 			}
 			
 			case RED: {
-				this.txtAreaConsole.getStyleClass().remove(Color.BLACK.getDesc());
+				this.txtAreaConsole.getStyleClass().remove(ColorEnum.BLACK.getDesc());
 				this.txtAreaConsole.getStyleClass().add(c.getDesc());
 				break;
 			}
