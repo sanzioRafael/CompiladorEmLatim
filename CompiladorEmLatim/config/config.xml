@@ -11,7 +11,7 @@
                 <srcName>/src</srcName>
             </sources>
         </Projects>
-        <isSelected>true</isSelected>
+        <isSelected>false</isSelected>
     </Directories>
     <Directories>
         <directoryPath>C:\LobaCapi</directoryPath>
@@ -25,5 +25,18 @@
             </sources>
         </Projects>
         <isSelected>false</isSelected>
+    </Directories>
+    <Directories>
+        <directoryPath>C:\Users\Acer-RTC\Documents\compilador</directoryPath>
+        <Projects>
+            <binares>
+                <binName>/bin</binName>
+            </binares>
+            <projectName>teste</projectName>
+            <sources>
+                <srcName>/src</srcName>
+            </sources>
+        </Projects>
+        <isSelected>true</isSelected>
     </Directories>
 </UsuarioConfig>
