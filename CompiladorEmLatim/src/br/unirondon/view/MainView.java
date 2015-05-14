@@ -31,8 +31,6 @@ public class MainView extends Application {
 
 			getStage().setTitle(AppConfig.getPropertie("App.mainTitle"));
 			getStage().setScene(scene);
-			getStage().setWidth(1000);
-			getStage().setHeight(800);
 			getStage().getIcons().add(new Image(AppConfig.getPropertie("App.mainIcon")));
 		} catch (IOException e) {
 			new BasicException(e.getMessage(), e).showExceptioDialog(
@@ -55,7 +53,6 @@ public class MainView extends Application {
 		getStage().show();
 		getStage().centerOnScreen();
 		getStage().setMaximized(true);
-		getStage().setResizable(false);
 	}
 	
 	public static void main(String[] args) {

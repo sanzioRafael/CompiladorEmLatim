@@ -53,7 +53,6 @@ public class Compiler {
 		String erroSyntax;
 		String erroSemantics;
 		
-		
 		if (this.sourceCode.length() > 2) {
 			this.compileOnActions.writeConsole(AppConfig.getPropertie("App.mainCompilerLexer"), ColorEnum.BLACK);
 			this.compileOnActions.writeConsole(this.lexer.getOut(), ColorEnum.BLACK);

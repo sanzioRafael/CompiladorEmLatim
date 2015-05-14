@@ -112,11 +112,41 @@ public class Syntax {
 		
 		return erro;
 	}
-	
-	private String checkVars () {
+
+	private String checkVars() {
 		String erro = "";
 		int i = 0;
-		
+
+		return erro;
+	}
+
+	private String beginEnd() {
+		String erro = "";
+
+		return erro;
+	}
+
+	private String write() {
+		String erro = "";
+
+		return erro;
+	}
+
+	private String read() {
+		String erro = "";
+
+		return erro;
+	}
+
+	private String ifCondiction() {
+		String erro = "";
+
+		return erro;
+	}
+
+	private String forCondiction() {
+		String erro = "";
+
 		return erro;
 	}
 	
