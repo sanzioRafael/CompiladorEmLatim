@@ -195,7 +195,7 @@ public class Lexer {
 					token = new Token();
 					column++;
 				}
-
+				
 				if (this.lyrics.contains(new Alphabetic(charC.toLowerCase(), charC.toUpperCase()))) {
 					while (this.lyrics.contains(new Alphabetic(charC.toLowerCase(), charC.toUpperCase()))
 							|| this.numbers.contains(charC)) {
