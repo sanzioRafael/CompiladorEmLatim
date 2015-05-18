@@ -4,8 +4,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" styleClass="background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.unirondon.controller.MainViewController">
-<children><MenuBar maxWidth="1.7976931348623157E308" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="37.0" prefWidth="1708.0" style="-fx-min-width: 100%;" xmlns:fx="http://javafx.com/fxml">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="994.0" prefWidth="1926.0" styleClass="background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.unirondon.controller.MainViewController">
+<children><MenuBar maxWidth="1.7976931348623157E308" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="37.0" prefWidth="1918.0" style="-fx-min-width: 100%;" xmlns:fx="http://javafx.com/fxml">
   <menus>
     <Menu mnemonicParsing="false" text="Arquivo">
       <items><Menu mnemonicParsing="false" text="Novo">
@@ -22,11 +22,11 @@
       </items>
     </Menu>
   </menus>
-</MenuBar><TabPane layoutY="109.0" maxHeight="1.7976931348623157E308" prefHeight="677.0" prefWidth="378.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml">
+</MenuBar><TabPane layoutY="109.0" maxHeight="1.7976931348623157E308" prefHeight="885.0" prefWidth="378.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml">
   <tabs>
     <Tab fx:id="tabProject" closable="false" text="Projetos" />
   </tabs>
-</TabPane><TabPane layoutX="378.0" layoutY="575.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="211.0" prefWidth="1328.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml">
+</TabPane><TabPane layoutX="378.0" layoutY="783.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="211.0" prefWidth="1542.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml">
   <tabs>
     <Tab closable="false" text="Console">
 <content><TextArea fx:id="txtAreaConsole" editable="false" prefHeight="172.0" prefWidth="1518.0" />
@@ -42,7 +42,7 @@
 </content>
     </Tab>
   </tabs>
-</TabPane><TabPane fx:id="tabPaneEditorText" layoutX="378.0" layoutY="110.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="466.0" prefWidth="1328.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml" /><ToolBar layoutY="37.0" maxWidth="1.7976931348623157E308" prefHeight="51.0" prefWidth="1708.0" xmlns:fx="http://javafx.com/fxml">
+</TabPane><TabPane fx:id="tabPaneEditorText" layoutX="378.0" layoutY="109.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="672.0" prefWidth="1542.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml" /><ToolBar layoutY="37.0" maxWidth="1.7976931348623157E308" prefHeight="51.0" prefWidth="1918.0" xmlns:fx="http://javafx.com/fxml">
   <items>
     <Button fx:id="btnSaveLobaFile" mnemonicParsing="false" onAction="#btnSaveLobaFileOnAction" text="Button" /><Button fx:id="btnRunLoba" mnemonicParsing="false" onAction="#btnRunLobaOnAction" text="Button" /><Button mnemonicParsing="false" text="Button" /><Button mnemonicParsing="false" text="Button" /><Button mnemonicParsing="false" text="Button" /><Button mnemonicParsing="false" text="Button" />
   </items>
