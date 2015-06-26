@@ -81,16 +81,6 @@ public class Lexer {
 			AppConfig.getSymbolString("while"), AppConfig.getSymbolString("to"), AppConfig.getSymbolString("do"),
 			AppConfig.getSymbolString("then"), AppConfig.getSymbolString("write"), AppConfig.getSymbolString("read")
 	};
-	private String[] specialWords = new String[] {
-			AppConfig.getSymbolString("caseA").toLowerCase(), AppConfig.getSymbolString("caseA"),
-			AppConfig.getSymbolString("caseE").toLowerCase(), AppConfig.getSymbolString("caseE"),
-			AppConfig.getSymbolString("caseI").toLowerCase(), AppConfig.getSymbolString("caseI"),
-			AppConfig.getSymbolString("caseO").toLowerCase(), AppConfig.getSymbolString("caseO"),
-			AppConfig.getSymbolString("caseU").toLowerCase(), AppConfig.getSymbolString("caseU"),
-			AppConfig.getSymbolString("caseN").toLowerCase(), AppConfig.getSymbolString("caseN"),
-			AppConfig.getSymbolString("caseCdilha").toLowerCase(), AppConfig.getSymbolString("caseCdilha"),
-			AppConfig.getSymbolString("caseY"), AppConfig.getSymbolString("casey"),
-	};
 
 	public Lexer() {
 		buildHash();
@@ -190,7 +180,7 @@ public class Lexer {
 
 			while (!charC.equals(AppConfig.getSymbolString("outOf"))) {
 				if (!this.lyrics.contains(new Alphabetic(charC.toLowerCase(), charC.toUpperCase()))
-						&& !this.numbers.contains(charC) && !charC.contains(" ") && charC.contains(AppConfig.getSymbolString("caseA")))
+						&& !this.numbers.contains(charC) && !charC.contains(" "))
 					charC = c.next();
 
 				while (charC.contains(" ")) {
@@ -282,6 +272,15 @@ public class Lexer {
 					buildinSymbolTable(token);
 
 					token = new Token();
+				} else if (!this.lyrics.contains(new Alphabetic(charC.toLowerCase(), charC.toUpperCase()))
+						&& !this.numbers.contains(charC) && !charC.equals(AppConfig.getSymbolString("outOf"))
+						&& Character.isLetter(charC.toCharArray()[0])) {
+					column++;
+					token = new Token(charC, TypeToken.SPECIAL, row, column);
+
+					buildinSymbolTable(token);
+
+					token = new Token();
 				}
 			}
 			
@@ -319,6 +318,8 @@ public class Lexer {
 		for (int m = 0; m < als.length; m++) {
 			this.aliens.add(als[m]);
 		}
+		
+		
 	}
 
 	private void buildinSymbolTable(Token token) {

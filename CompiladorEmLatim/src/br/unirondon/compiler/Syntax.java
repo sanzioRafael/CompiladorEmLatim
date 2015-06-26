@@ -122,7 +122,11 @@ public class Syntax {
 
 	private String beginEnd() {
 		String erro = "";
-
+		
+		for (int i = 0; i < lexer.getSymbolTable().size(); i++) {
+			
+		}
+		
 		return erro;
 	}
 
